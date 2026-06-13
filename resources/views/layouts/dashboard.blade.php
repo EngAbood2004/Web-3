@@ -31,7 +31,7 @@
             Abood
         </x-button>
         <x-button>
-            Click-on
+            Click- on
         </x-button>
 
     </div>
