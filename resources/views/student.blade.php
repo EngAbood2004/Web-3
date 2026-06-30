@@ -117,7 +117,7 @@
     @endif
 
     {{-- زر إضافة طالب جديد --}}
-    <a href="{{ route('student') }}" class="btn-add">➕ إضافة طالب جديد</a>
+    <a href="{{ route('students.create') }}" class="btn-add">➕ إضافة طالب جديد</a>
 
     {{-- نموذج إضافة/تعديل طالب --}}
     @if(isset($student))

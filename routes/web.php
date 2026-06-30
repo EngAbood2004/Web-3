@@ -13,11 +13,11 @@ Route::get('/home', function () {
 });
 
 Route::prefix('students')->controller(StudentController::class)->group(function () {
-    Route::get('', 'index')->name('students.index');           // تعديل
-    Route::get('/create', 'create')->name('student');          // تعديل
+    Route::get('', 'index')->name('students.index');
+    Route::get('/create', 'create')->name('students.create');  // ✅ تأكد من هذا
     Route::post('', 'store')->name('students.store');
-    Route::get('/{student}/edit', 'edit')->name('students.edit');  // تعديل
+    Route::get('/{student}/edit', 'edit')->name('students.edit');
     Route::put('/{student}', 'update')->name('students.update');
-    Route::delete('/{student}', 'destroy')->name('students.destroy'); // إضافة جديدة
-    Route::put('/{id}/restore', 'restore')->name('students.restore'); // إضافة جديدة
+    Route::delete('/{student}', 'destroy')->name('students.destroy');
+    Route::put('/{id}/restore', 'restore')->name('students.restore');
 });

@@ -12,13 +12,14 @@ class StudentController extends Controller
     {
         $students = Student::all();
         $deletedStudents = Student::onlyTrashed()->get();
-        return view('student', compact('students', 'deletedStudents'));
+        return view('student', compact('students', 'deletedStudents'));  // ✅ تغيير من 'students' إلى 'student'
     }
 
     // عرض صفحة إضافة طالب جديد
     public function create()
     {
-        return view('student');
+        $students = collect(); // مجموعة فارغة
+        return view('student', compact('students'));
     }
 
     // حفظ طالب جديد
@@ -37,7 +38,8 @@ class StudentController extends Controller
     // عرض صفحة تعديل طالب
     public function edit(Student $student)
     {
-        return view('student', compact('student'));
+        $students = Student::all();
+        return view('student', compact('student', 'students'));
     }
 
     // تحديث بيانات طالب
